@@ -1,35 +1,29 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css';
 console.log(s);
-// let s = {
-//     'nav': 'Navbar_nav__3ou9Q',
-//     'item': 'Navbar_item__3qaF3',
-//     'active' : 'Baksndakdn_actve'
- // }
 
-let c1 = "item";
-let c2 = "active";
-// "item active"
-let classes = c1 + " " + c2;
-let classesNew = `${s.item} ${c2}`;
-
+let setActivity = ({ isActive }) =>(isActive ? `${s.active}` : "");
 
 const Navbar = () => {
     return <nav className={s.nav}>
         <div className={s.item}>
-            <a href='/profile'>Profile</a>
+            {/* <a href='/profile'>Profile</a> */}
+            <NavLink to='/profile'  className={setActivity}>Profile</NavLink>
         </div>
         <div className={`${s.item} ${s.active}`}>
-            <a href= 'dialogs'>Messages</a>
+            <NavLink to='/dialogs'className={setActivity}>Messages</NavLink>
         </div>
         <div className={s.item}>
-            <a>News</a>
+            <NavLink to='/news' className={setActivity}>News</NavLink>
         </div>
         <div className={s.item}>
-            <a>Music</a>
+            <NavLink to='music' className={setActivity}>Music</NavLink>
         </div>
         <div className={s.item}>
-            <a>Settings</a>
+            <NavLink to='/settings' className={setActivity}>Settings</NavLink>
+            <NavLink to ='/experimental'>Experimental</NavLink>
+            <NavLink to = '/expy2'> Expy2</NavLink>
         </div>
     </nav>
 }
