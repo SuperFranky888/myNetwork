@@ -17,13 +17,38 @@
 }
 
 .dialog {
-
+display: flex;
+border: 1px solid red;
+align-items: center;
 }
+
+.dialogAvatar {
+    margin-right: 10px;
+}
+
+
 .dialogMessages {
     padding: 10px;
 }
 
+ .dialog a.active {
+    color: goldenrod;
+}
 
 .dialogMessages .message {
     color: rgb(252, 250, 246);
 }
+
+.dialogAvatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.dialogAvatar img{
+    width: 60px;
+    height: 60px;
+
+}
+
